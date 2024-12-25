@@ -1,0 +1,22 @@
+<configuration>
+    <!-- Ocultar logs de Hibernate -->
+    <logger name="org.hibernate" level="ERROR" />
+
+    <!-- Configuración para el backend de conexión -->
+    <logger name="org.hibernate.engine.jdbc.connections.internal" level="ERROR" />
+
+    <!-- Configuración para SLF4J -->
+    <logger name="org.hibernate.SQL" level="ERROR" />
+
+    <!-- Salida a consola -->
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss} %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- Configuración global -->
+    <root level="ERROR">
+        <appender-ref ref="CONSOLE" />
+    </root>
+</configuration>
